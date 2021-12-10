@@ -1,0 +1,38 @@
+[tool.poetry]
+name = "image-converter"
+version = "0.1.0"
+description = "An endpoint for converting images."
+authors = ["Lars van Rhijn <larsvanrhijn@gmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+Django = "^4.0"
+uWSGI = "^2.0.20"
+psycopg2-binary = "^2.9.2"
+djangorestframework = "^3.12.4"
+django-oauth-toolkit = "^1.5.0"
+PyYAML = "^6.0"
+uritemplate = "^4.1.1"
+pytz = "^2021.3"
+Pillow = "^8.4.0"
+
+[tool.poetry.dev-dependencies]
+pydocstyle = "^6.1.1"
+black = "^21.12b0"
+flake8 = "^4.0.1"
+coverage = "^6.2"
+
+[tool.black]
+line-length = 119
+target-version = ["py38"]
+exclude = '''
+/(
+  migrations
+  | website/converter/settings
+)/
+'''
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
